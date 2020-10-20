@@ -17,7 +17,7 @@ def extract_text(file):
 
     result = requests.post(url_api,
                 files = {file: file_bytes},
-                data = {"apikey": "551ce5581588957",
+                data = {"apikey": "Insert --- your --- API Key --- H ------ E ------ R ------ E",
                         "language": "eng",
                         "OCREngine": "2",
                         "detectOrientation": "true"})
