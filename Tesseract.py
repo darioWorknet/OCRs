@@ -30,8 +30,9 @@ def extract_name (filename):
     name = os.path.splitext(tail)[0]
     return name
 
-
+#Folder we want to extract images from
 folder = r"D:\Google Drive\UPWORK\VBA_to_Python_to_C\ImageFunctions"
+#Imgages is a list of PIL(Images) objects
 images = load_images_from_folder (folder)
 
 for img in images:
@@ -40,6 +41,7 @@ for img in images:
     name = extract_name(img.filename)
     print(name)
 
+    #Folder we want to save extracted text in
     new_folder = "Text_from_images"
     filename = folder + "/" + new_folder + "/"+ name + ".txt"
 
