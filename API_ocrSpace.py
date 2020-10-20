@@ -25,8 +25,6 @@ def extract_text(file):
     result = result.content.decode()
     result = json.loads(result)
 
-    print (result)
-
     parsed_results = result.get("ParsedResults")[0]
     text_detected = parsed_results.get("ParsedText")
     print(text_detected)
@@ -34,7 +32,7 @@ def extract_text(file):
     return text_detected
 
 
-def load_images_from_folder(folder):
+def images_filename_from_folder(folder):
     images = []
     for filename in os.listdir(folder):
         try:
@@ -52,8 +50,10 @@ def extract_name (filename):
     return name
 
 
+#Folder we want to extract images from
 folder = r"D:\Google Drive\UPWORK\VBA_to_Python_to_C\ImageFunctions"
-images = load_images_from_folder (folder)
+#Images is a list of filenames of images in folder
+images = images_filename_from_folder (folder)
 
 for img in images:
     text = extract_text(img)
